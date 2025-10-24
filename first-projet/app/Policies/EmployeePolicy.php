@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\employee;
+use App\Models\employe;
 use Illuminate\Auth\Access\Response;
 
 class EmployeePolicy
@@ -29,8 +29,9 @@ class EmployeePolicy
      */
     public function create(User $user): bool
     {
-        //
+        return true; 
     }
+
 
     /**
      * Determine whether the user can update the model.

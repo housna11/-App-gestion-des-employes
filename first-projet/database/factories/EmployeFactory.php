@@ -18,7 +18,7 @@ class EmployeFactory extends Factory
     {
         return [
             'nom' => $this->faker->lastName(),
-            'prenom' => $this->faker->firstName(),
+            'prénom' => $this->faker->firstName(),
             'email' => $this->faker->safeEmail(),
             'poste' => $this->faker->jobTitle(),
 

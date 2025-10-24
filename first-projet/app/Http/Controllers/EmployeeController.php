@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\employee;
 use App\Http\Requests\StoreemployeeRequest;
 use App\Http\Requests\UpdateemployeeRequest;
@@ -21,7 +22,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        return view ('ajouter');
     }
 
     /**
@@ -29,7 +30,14 @@ class EmployeeController extends Controller
      */
     public function store(StoreemployeeRequest $request)
     {
-        //
+        $infos=$request->validate([
+            'nom'=>'required',
+            'prenom'=>'required',
+            'email'=>'required',
+            'poste'=>'required',
+        ]);
+        employe::create($infos);
+        return redirect('accueil');
     }
 
     /**

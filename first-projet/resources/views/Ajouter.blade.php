@@ -9,9 +9,8 @@
 <body>
 
   <div class="flex justify-center items-center mt-30">
-    <form method="POST" action="{{route('employe.store')}}" class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md space-y-4">
+    <form method="POST" action="/employe" class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md space-y-4">
       @csrf
-
       <div>
         <label class="block text-lg font-bold mb-1">Nom</label>
         <input type="text" name="nom" class="w-full px-3 py-2 border rounded-md" placeholder="Entrer le nom">
@@ -33,7 +32,7 @@
       </div>
 
       <div class="flex justify-between pt-4">
-        <button type="submit" class="bg-[#C90184] text-white px-3 py-2 rounded-md  transition">➕ Ajouter</button>
+        <button type="submit" class=" mx-auto  bg-[#C90184] text-white px-10 py-2 rounded-md transition">➕ Ajouter</button>
       </div>
     </form>
   </div>

@@ -16,25 +16,11 @@ use App\Http\Controllers\EmployeeController;
 */
 
 
-//brief
-// Route::get('/', function () {
-//     return view('Accueil');
-// });
-// Route:: get('/Modifier', function (){
-//     return view('Modifier');
-// });
-// Route::get('/Ajouter',function(){
-//     return view('Ajouter');
-// });
-// Route::get('/Supprimer',function(){
-//     return view('Supprimer');
-// });
-// Route::get('/Detail',function(){
-//     return view('Detail');
-// });
-Route::get('/', function () {
-    return view('accueil');
-})->name('accueil');
-Route::get('/employe', [EmployeeController::class, 'create'])->name('employe.create');
-Route::post('/employe', [EmployeeController::class, 'store'])->name('employe.store');
 
+Route::get('/employe', [EmployeeController::class, 'create']);
+Route::post('/employe', [EmployeeController::class, 'store']);
+Route::get('/', [EmployeeController::class, 'index']);
+Route::delete('employe/{id}',[EmployeeController::class,'destroy']);
+Route::put('employe/{id}', [EmployeeController::class, 'update']);
+Route::get('employe/{id}/edit', [EmployeeController::class, 'edit']);
+Route::get('employe/{id}',[EmployeeController::class,'show']);
